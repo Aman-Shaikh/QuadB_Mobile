@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
-import 'src/screens/login_screen.dart';
+import 'package:quad_b/src/screens/Feeds/feed_view.dart';
+import 'src/screens/Authentication/login_screen.dart';
 import 'src/screens/home_screen.dart';
 import 'src/services/auth_service.dart';
 
@@ -17,12 +18,14 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter App',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: Consumer<AuthService>(
           builder: (context, authService, child) {
-            return authService.isAuthenticated ? HomeScreen() : LoginScreen();
+            // return authService.isAuthenticated ? HomeScreen() : LoginScreen();
+            return HomeView();
           },
         ),
       ),

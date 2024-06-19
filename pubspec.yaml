@@ -22,6 +22,8 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   http: ^1.2.1
   provider: ^6.1.2
+  image_picker: ^1.1.1
+  mime: ^1.0.5
 
 flutter:
   uses-material-design: true
