@@ -1,34 +1,35 @@
-import "package:flutter/material.dart";
+// lib/main.dart
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quad_b/src/screens/Feeds/feed_view.dart';
-import 'src/screens/Authentication/login_screen.dart';
-import 'src/screens/home_screen.dart';
-import 'src/services/auth_service.dart';
+import 'package:quad_b/src/controllers/login_controller.dart';
+import 'package:quad_b/src/screens/Authentication/login_screen.dart';
+import 'package:quad_b/src/screens/home_screen.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final isLoggedIn = await _checkLoginState();
 
-void main() {
-  runApp(MyApp());
+  runApp(MyApp(isLoggedIn: isLoggedIn));
+}
+
+Future<bool> _checkLoginState() async {
+  final loginController = LoginController();
+  return await loginController.isLoggedIn();
 }
 
 class MyApp extends StatelessWidget {
+  final bool isLoggedIn;
+
+  MyApp({required this.isLoggedIn});
+
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AuthService()),
-      ],
-      child: MaterialApp(
-        title: 'Flutter App',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Consumer<AuthService>(
-          builder: (context, authService, child) {
-            // return authService.isAuthenticated ? HomeScreen() : LoginScreen();
-            return HomeView();
-          },
-        ),
+    return MaterialApp(
+      title: 'Flutter',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: isLoggedIn ? HomeView() : LoginScreen(),
     );
   }
 }

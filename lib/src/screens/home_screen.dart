@@ -30,10 +30,10 @@ class _HomeViewState extends State<HomeView> {
         title: Text('Versus'),
         centerTitle: true,
         actions: [
-          IconButton(
-            icon: Icon(Icons.send),
-            onPressed: () {},
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.send),
+          //   onPressed: () {},
+          // ),
         ],
       ),
       body: _widgetOptions.elementAt(_selectedIndex),

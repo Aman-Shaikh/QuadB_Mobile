@@ -24,6 +24,7 @@ dev_dependencies:
   provider: ^6.1.2
   image_picker: ^1.1.1
   mime: ^1.0.5
+  shared_preferences: ^2.2.3
 
 flutter:
   uses-material-design: true
