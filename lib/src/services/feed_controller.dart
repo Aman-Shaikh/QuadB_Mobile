@@ -1,36 +1,26 @@
-// controllers/feed_controller.dart
+// post_controller.dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 import '../models/post_model.dart';
 
-class FeedController {
+
+class PostController {
   Future<List<Post>> fetchPosts() async {
-    // Simulate fetching posts from an API or database
-    await Future.delayed(Duration(seconds: 2)); // Simulated network delay
-    return [
-      Post(
-        username: 'user1',
-        imageUrl: 'https://via.placeholder.com/600/92c952',
-        caption: 'Enjoying the view!',
-      ),
-      Post(
-        username: 'user2',
-        imageUrl: 'https://via.placeholder.com/600/771796',
-        caption: 'Great day out!',
-      ),
-      Post(
-        username: 'user3',
-        imageUrl: 'https://via.placeholder.com/600/24f355',
-        caption: 'Sunset by the beach.',
-      ),
-      Post(
-        username: 'user4',
-        imageUrl: 'https://via.placeholder.com/600/d32776',
-        caption: 'City lights at night.',
-      ),
-      Post(
-        username: 'user5',
-        imageUrl: 'https://via.placeholder.com/600/f66b97',
-        caption: 'Hiking adventures!',
-      ),
-    ];
+    final response = await http.get(Uri.parse('https://quad-b-i82h.onrender.com/posts/?partnerId=660a1c800f03cd2f27e44c7e'));
+
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+
+    if (response.statusCode == 200) {
+      try {
+        List jsonResponse = json.decode(response.body);
+        return jsonResponse.map((post) => Post.fromJson(post)).toList();
+      } catch (e) {
+        throw Exception('Failed to parse posts: $e');
+      }
+    } else {
+      throw Exception('Failed to load posts: ${response.reasonPhrase}');
+    }
   }
 }
