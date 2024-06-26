@@ -13,7 +13,7 @@ class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
     PostFeedScreen(),
-    LeaderboardView(),
+    LeaderboardScreen(),
     ProfileView(),
   ];
 

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '../../models/post_model.dart';
-import '../../services/feed_controller.dart';
+import '../../controllers/feed_controller.dart';
 
 
 class PostFeedScreen extends StatefulWidget {
