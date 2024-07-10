@@ -92,45 +92,45 @@ class WAddProduct extends StatelessWidget {
                     const SizedBox(height: myFormHeight - 20),
                     Text("First image will be your display image",
                         style: const TextStyle(color: lightGrey)),
-                    const Divider(),
+                    // const Divider(),
                     const SizedBox(height: myFormHeight - 20),
-                    Text("Choose product color",
-                        style: const TextStyle(
-                            color: lightGrey, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: myFormHeight - 10),
-                     Obx(()=> Wrap(
-                            spacing: 8.0,
-                            runSpacing: 8.0,
-                            children: List.generate(
-                                10,
-                                (index) => Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        VxBox()
-                                            .color(Color(controller.commonClothsColors[index]))
-                                            .roundedFull
-                                            .size(60, 60)
-                                            .make()
-                                            .onTap(() {
-                                          if(tapped[index].value==true)
-                                            {
-                                              tapped[index].value=false;
-                                              controller.selectedColors.removeAt(index);
-                                            }
-                                          else{
-                                            tapped[index].value=true;
-                                            controller.selectedColors.add(controller.commonClothsColors[index]);
-                                          }
-                                        }),
-                                        tapped[index].value
-                                            ? const Icon(
-                                                Icons.done,
-                                                color: myWhiteColor,
-                                              )
-                                            : const SizedBox(),
-                                      ],
-                                    ))),
-                     ),
+                    // Text("Choose product color",
+                    //     style: const TextStyle(
+                    //         color: lightGrey, fontWeight: FontWeight.bold)),
+                    // const SizedBox(height: myFormHeight - 10),
+                    //  Obx(()=> Wrap(
+                    //         spacing: 8.0,
+                    //         runSpacing: 8.0,
+                    //         children: List.generate(
+                    //             10,
+                    //             (index) => Stack(
+                    //                   alignment: Alignment.center,
+                    //                   children: [
+                    //                     VxBox()
+                    //                         .color(Color(controller.commonClothsColors[index]))
+                    //                         .roundedFull
+                    //                         .size(60, 60)
+                    //                         .make()
+                    //                         .onTap(() {
+                    //                       if(tapped[index].value==true)
+                    //                         {
+                    //                           tapped[index].value=false;
+                    //                           controller.selectedColors.removeAt(index);
+                    //                         }
+                    //                       else{
+                    //                         tapped[index].value=true;
+                    //                         controller.selectedColors.add(controller.commonClothsColors[index]);
+                    //                       }
+                    //                     }),
+                    //                     tapped[index].value
+                    //                         ? const Icon(
+                    //                             Icons.done,
+                    //                             color: myWhiteColor,
+                    //                           )
+                    //                         : const SizedBox(),
+                    //                   ],
+                    //                 ))),
+                    //  ),
 
                     const SizedBox(height: myFormHeight - 10),
                     SizedBox(
