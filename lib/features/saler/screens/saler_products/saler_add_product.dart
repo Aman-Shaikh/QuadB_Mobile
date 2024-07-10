@@ -30,7 +30,7 @@ class WAddProduct extends StatelessWidget {
                       controller: controller.pNameController,
                       decoration: const InputDecoration(
                           label: Text("Product Name"),
-                          prefixIcon: Icon(LineAwesomeIcons.t_shirt)),
+                          prefixIcon: Icon(LineAwesomeIcons.pizza_slice)),
                     ),
                     const SizedBox(height: myFormHeight - 20),
                     TextFormField(

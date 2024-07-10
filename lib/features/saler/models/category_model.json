@@ -1,36 +1,91 @@
 {
-  "categories":[
+  "categories": [
     {
-      "name": "Mens",
+      "name": "Fruits",
       "subcategories": [
-        "Jeans",
-        "Shirt",
-        "T-shirt",
-        "Jacket",
-        "Sportwear",
-        "Suit"
+        "Apple",
+        "Banana",
+        "Orange",
+        "Grapes",
+        "Mango",
+        "Kiwi"
       ]
     },
     {
-      "name": "Kids",
+      "name": "Vegetables",
       "subcategories": [
-        "Baby jeans",
-        "Baby t-shirt",
-        "Baby Shots",
-        "Baby Jacket",
-        "Baby overall",
-        "Baby suit"
+        "Carrot",
+        "Tomato",
+        "Spinach",
+        "Broccoli",
+        "Bell Pepper",
+        "Cucumber"
       ]
     },
     {
-      "name": "Womens",
+      "name": "Dairy",
       "subcategories": [
-        "Dress",
-        "jeans",
-        "Tshirt",
-        "Saree",
-        "Sportwear",
-        "Skirt"
+        "Milk",
+        "Cheese",
+        "Yogurt",
+        "Butter",
+        "Cream",
+        "Eggs"
+      ]
+    },
+    {
+      "name": "Prepared Food",
+      "subcategories": [
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Snacks",
+        "Desserts",
+        "Beverages"
+      ]
+    },
+    {
+      "name": "Grains",
+      "subcategories": [
+        "Rice",
+        "Pasta",
+        "Bread",
+        "Quinoa",
+        "Oats",
+        "Cereal"
+      ]
+    },
+    {
+      "name": "Meat and Poultry",
+      "subcategories": [
+        "Beef",
+        "Chicken",
+        "Pork",
+        "Turkey",
+        "Lamb",
+        "Duck"
+      ]
+    },
+    {
+      "name": "Seafood",
+      "subcategories": [
+        "Salmon",
+        "Shrimp",
+        "Tuna",
+        "Cod",
+        "Crab",
+        "Lobster"
+      ]
+    },
+    {
+      "name": "Beverages",
+      "subcategories": [
+        "Coffee",
+        "Tea",
+        "Juice",
+        "Soda",
+        "Smoothies",
+        "Water"
       ]
     }
   ]
