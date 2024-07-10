@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "341408006906",
+    "project_id": "quad-b-1d95d",
+    "storage_bucket": "quad-b-1d95d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341408006906:android:2d9494896cefdaf0c0ff43",
+        "android_client_info": {
+          "package_name": "com.example.quad_b"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCie4NKN9Jq6I3_1vFmujlN6lgyPudUn8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

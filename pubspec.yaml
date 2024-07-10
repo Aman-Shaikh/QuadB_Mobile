@@ -7,29 +7,48 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: '>=2.18.4 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
+  ## -- STATE MANAGEMENT
+  get: ^4.6.5
+  velocity_x: ^3.6.0
 
-  cupertino_icons: ^1.0.6
+  ## -- FIREBASE PACKAGES
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.2.5
+  firebase_storage: ^11.0.10
+  cloud_firestore: ^4.3.1
+  google_sign_in: ^5.4.4
+
+  ## -- ICON PACKAGES
+  cupertino_icons: ^1.0.2
+  line_awesome_flutter: ^2.0.0
+
+  ## -- FONTS PACKAGES
+  google_fonts: ^6.2.1
+
+  ## -- OTP TEXT FIELD PACKAGES
+  flutter_otp_text_field: ^1.1.1
+
+  ## -- image selection
+  image_picker: ^0.8.6+1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0
-  http: ^1.2.1
-  provider: ^6.1.2
-  image_picker: ^1.1.1
-  mime: ^1.0.5
-  shared_preferences: ^2.2.3
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
-
-  
+  assets:
+    - assets/images/
+    - assets/logo/
+    - lib/features/Saler/models/
   
   
   

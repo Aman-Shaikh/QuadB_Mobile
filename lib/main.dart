@@ -1,35 +1,36 @@
-// lib/main.dart
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:quad_b/src/controllers/login_controller.dart';
-import 'package:quad_b/src/screens/Authentication/login_screen.dart';
-import 'package:quad_b/src/screens/home_screen.dart';
-void main() async {
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:quad_b/repository/authentication_repository/saler_authentication_repository.dart';
+import 'package:quad_b/utils/theme/theme.dart';
+
+import 'features/entry_point/screens/splash_screen/splash_screen.dart';
+import 'firebase_options.dart';
+
+
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  final isLoggedIn = await _checkLoginState();
-
-  runApp(MyApp(isLoggedIn: isLoggedIn));
-}
-
-Future<bool> _checkLoginState() async {
-  final loginController = LoginController();
-  return await loginController.isLoggedIn();
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then((value) => Get.put(WAuthenticationRepository()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final bool isLoggedIn;
+  const MyApp({super.key});
 
-  MyApp({required this.isLoggedIn});
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter',
+    return GetMaterialApp(
+      title: 'Versus',
+      theme: MyAppTheme.lightTheme,
+      darkTheme: MyAppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: isLoggedIn ? HomeView() : LoginScreen(),
+      // defaultTransition: Transition.leftToRightWithFade,
+      // transitionDuration: const Duration(milliseconds: 500),
+      home: SplashScreen(),
     );
   }
 }
+
